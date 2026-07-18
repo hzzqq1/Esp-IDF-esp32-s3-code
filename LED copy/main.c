@@ -1,16 +1,15 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "led.h"
-#include "exit.h"
 
 void app_main() 
 {
+
   led_init();
-  exit_init();
 
   while(1)
   {
-    vTaskDelay(100);
+    LED_TOGGLE();
+    vTaskDelay(50);
   }
-
 }
